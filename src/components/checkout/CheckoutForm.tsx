@@ -2,12 +2,13 @@ import React, { FormEvent, ReactNode } from 'react';
 import styled from 'styled-components';
 
 const CheckoutFormStyled = styled.form`
-  max-width: 600px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 20px;
   background-color: #f4f4f4;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 `;
 
 const CheckoutForm: React.FC<{

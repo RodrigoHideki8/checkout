@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# Documentação do Checkout
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Visão Geral
+O checkout é uma parte crucial de qualquer aplicativo de comércio eletrônico. Ele permite que os usuários revisem e finalizem suas compras, inserindo informações de pagamento e envio. A documentação a seguir descreve os componentes e funcionalidades do checkout desenvolvido para nossa aplicação.
 
-## Available Scripts
+## Componentes
 
-In the project directory, you can run:
+### CheckoutForm
 
-### `npm start`
+#### Descrição
+O componente CheckoutForm é responsável por encapsular todo o processo de checkout, incluindo a submissão dos dados do formulário.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### Props
+- `onSubmit`: Função de retorno de chamada que é acionada quando o formulário de checkout é submetido.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### PaymentMethod
 
-### `npm test`
+#### Descrição
+O componente PaymentMethod controla o método de pagamento selecionado pelo usuário durante o processo de checkout. Ele exibe diferentes formas de pagamento, como cartão de crédito, PIX e boleto, e coleta informações correspondentes ao método de pagamento escolhido.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Props
+- `activeTab`: String que representa o método de pagamento ativo selecionado pelo usuário.
+- `onTabChange`: Função de retorno de chamada que é acionada quando o usuário seleciona um novo método de pagamento.
+- `formData`: Objeto contendo os dados do formulário de pagamento.
+- `onChange`: Função de retorno de chamada que é acionada quando ocorrem alterações nos campos do formulário de pagamento.
+- `errors`: Objeto contendo mensagens de erro para os campos do formulário de pagamento.
+- `onSubmit`: Função de retorno de chamada que é acionada quando o formulário de pagamento é submetido.
 
-### `npm run build`
+### Outros Componentes
+Além dos componentes principais descritos acima, também são utilizados outros componentes como FormInput e InputMask para coletar e formatar informações específicas, como números de cartão de crédito e datas de validade.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Funcionalidades
+- **Seleção de Método de Pagamento:** O usuário pode escolher entre diferentes métodos de pagamento, como cartão de crédito, PIX e boleto.
+- **Preenchimento de Dados do Cartão de Crédito:** O usuário pode inserir informações do cartão de crédito, incluindo número do cartão, nome no cartão, data de validade e CVV.
+- **Validação de Campos:** Todos os campos do formulário são validados para garantir que as informações inseridas sejam corretas e válidas.
+- **Exibição de Erros:** Mensagens de erro são exibidas ao usuário se alguma informação inserida for inválida ou faltante.
+- **Submissão do Formulário:** Após o preenchimento correto de todos os campos, o usuário pode submeter o formulário de checkout para concluir a compra.

@@ -10,7 +10,7 @@ const Label = styled.label`
 `;
 
 const Input = styled.input`
-  width: 100%;
+  width: 90%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -25,14 +25,16 @@ const ErrorText = styled.div`
 const FormInput: React.FC<{
     label: string;
     name: string;
+    type: string;
+    placeholder: string;
     value: string;
     onChange: (e: ChangeEvent<HTMLInputElement>) => void;
     error?: string;
-  }> = ({ label, name, value, onChange, error }) => {
+  }> = ({ label, name, type, value, placeholder, onChange, error }) => {
     return (
       <FormGroup>
         <Label>{label}</Label>
-        <Input type="text" name={name} value={value} onChange={onChange} className={error ? 'is-invalid' : ''} />
+        <Input type={type} name={name} value={value} placeholder={placeholder} onChange={onChange} className={error ? 'is-invalid' : ''} />
         {error && <ErrorText>{error}</ErrorText>}
       </FormGroup>
     );
